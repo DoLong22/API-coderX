@@ -24,21 +24,8 @@ module.exports.getCreate = function(req,res){
     res.render('users/create');
 }
 
-module.exports.postCreate = function(req,res){
-    let errors = [];
-    if(!req.body.name){
-        errors.push('Name is required.')
-    }
-    if(!req.body.phone){
-        errors.push('Phone is required.')
-    }
-    if(errors.length){
-        res.render('users/create',{
-            errors:errors,
-            values:req.body
-        });
-        return;
-    }
+module.exports.postCreate = function(req,res){   
+    // console.log(res.locals)
     users.push(req.body);
     res.redirect('/users')
 }
