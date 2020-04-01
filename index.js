@@ -8,11 +8,11 @@ const authRoute = require('./routes/auth.route')
 const authMiddleware = require('./middleware/auth.middleware')
 
 const app = express();
-const POST =process.env.POST || 3030;
+const POST =process.env.POST || 3000;
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
-app.use(cookieParser())
+app.use(cookieParser("lsahhfsahfsa@$@$"))
 
 app.set('view engine','pug');
 app.set('views','./view')
