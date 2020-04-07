@@ -1,22 +1,33 @@
 html 
     head    
         link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css")
-        link(rel="stylesheet" href='/styles/custom.css')
+        //- link(rel="stylesheet" href='custom.css')
+        style
+            include ../../styles/custom.css
     body 
-    .conainer.p-5    
-        nav.navbar.navbar-expand-lg.navbar-light.bg-light
-            a.navbar-brand(href='#') LongPeo
-            button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarNav', aria-controls='navbarNav', aria-expanded='false', aria-label='Toggle navigation')
-                span.navbar-toggler-icon
-            #navbarNav.collapse.navbar-collapse
-                ul.navbar-nav
-                    li.nav-item.active
-                        a.nav-link(href='/') Home 
-                            span.sr-only (current)
-                    li.nav-item
-                        a.nav-link(href='/users') User
-                    li.nav-item
-                        a.nav-link(href='/auth/login') Login
-            if user
-                p= user.name
-        block content
+        .conainer.p-5    
+            nav.navbar.navbar-expand-lg.navbar-light.bg-light
+                a.navbar-brand(href='#') LongPeo
+                button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarNav', aria-controls='navbarNav', aria-expanded='false', aria-label='Toggle navigation')
+                    span.navbar-toggler-icon
+                #navbarNav.collapse.navbar-collapse
+                    ul.navbar-nav
+                        li.nav-item.active
+                            a.nav-link(href='/') Home 
+                                span.sr-only (current)
+                        li.nav-item
+                            a.nav-link(href='/users') User
+                        li.nav-item
+                            a.nav-link(href='/auth/login') Login
+                        li.nav-item
+                            a.nav-link(href='/products') Products
+                        li.nav-item
+                            a.nav-link(href='/users/create') Create Account
+                if user
+                    p= user.name
+            block content
+        script
+            include ../../js/jquery-3.3.1.min.js
+            //- include ../../js/pagination.js
+        //- script(src="../../js/jquery-3.3.1.min.js")
+    

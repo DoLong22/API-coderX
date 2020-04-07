@@ -1,0 +1,25 @@
+extends ../layout/common
+block content
+    .row
+        for product in products    
+            .col-xl-3.card
+                img.card-img-top(src=product.img)
+                .card-body
+                    h5.card-title= product.name
+                    p.card-textd= product.description
+                    a.btn.btn-primary Go somewhere
+    
+    nav
+        ul.pagination
+            //- li.page-item
+            //-     a.page-link(href='#', aria-label='Previous')
+            //-         span(aria-hidden='true') &laquo;
+            li.page-item.active
+                a.page-link(href='/products/page?page=1') 1
+            li.page-item
+                a.page-link(href='/products/page?page=2') 2
+            li.page-item
+                a.page-link(href='/products/page?page=3') 3
+            li.page-item
+                a.page-link(href='#', aria-label='Next')
+                    span(aria-hidden='true') &raquo;
